@@ -1,5 +1,8 @@
+import { Ionicons } from '@expo/vector-icons';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
+import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { AppState, type AppStateStatus } from 'react-native';
@@ -10,6 +13,11 @@ import { AuthProvider } from '../src/hooks/useAuth';
 import { flush } from '../src/lib/offlineQueue';
 import { persister, queryClient } from '../src/lib/queryClient';
 import { useTheme } from '../src/theme/useTheme';
+
+// Icon glyphs render blank if the first paint happens before Ionicons.ttf is
+// registered, and they do not re-render once it lands. Hold the splash until
+// the font is ready.
+void SplashScreen.preventAutoHideAsync();
 
 /** Replays queued offline mutations whenever the app comes to the foreground. */
 function useOfflineReplay(): void {
@@ -53,6 +61,16 @@ function RootStack() {
 }
 
 export default function RootLayout() {
+  const [fontsLoaded, fontError] = useFonts(Ionicons.font);
+
+  useEffect(() => {
+    if (fontsLoaded || fontError) void SplashScreen.hideAsync();
+  }, [fontsLoaded, fontError]);
+
+  // Render nothing rather than a half-painted UI; a font failure still lets the
+  // app through, just without glyphs.
+  if (!fontsLoaded && !fontError) return null;
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
