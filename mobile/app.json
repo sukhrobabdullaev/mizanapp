@@ -12,6 +12,9 @@
       "bundleIdentifier": "pro.navai.mizan",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Namoz vaqtlarini aniq hisoblash uchun joylashuvingiz kerak."
+      },
+      "entitlements": {
+        "com.apple.security.application-groups": ["group.pro.navai.mizan"]
       }
     },
     "android": {
@@ -46,7 +49,8 @@
           "color": "#0FA36B"
         }
       ],
-      "./plugins/withMizanWidgets"
+      "./plugins/withMizanWidgets",
+      "@bacons/apple-targets"
     ],
     "experiments": {
       "typedRoutes": true

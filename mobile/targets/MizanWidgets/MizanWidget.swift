@@ -72,7 +72,7 @@ struct MizanWidgetView: View {
             : Double(entry.snapshot.tasksDone) / Double(entry.snapshot.tasksTotal)
     }
 
-    var body: some View {
+    private var content: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(entry.snapshot.nextPrayerName.uppercased())
                 .font(.caption2.weight(.bold))
@@ -97,7 +97,17 @@ struct MizanWidgetView: View {
             }
         }
         .padding()
-        .containerBackground(for: .widget) { Color(.systemBackground) }
+    }
+
+    // `containerBackground` is iOS 17+, and widgets there refuse to render
+    // without it. On 16.x fall back to a plain background.
+    @ViewBuilder
+    var body: some View {
+        if #available(iOS 17.0, *) {
+            content.containerBackground(for: .widget) { Color(.systemBackground) }
+        } else {
+            content.background(Color(.systemBackground))
+        }
     }
 }
 
