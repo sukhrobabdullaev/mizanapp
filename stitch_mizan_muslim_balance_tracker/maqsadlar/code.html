@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="uz"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>Mizan - Maqsadlar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #0FA36B 0%, #4EE6A8 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#4b6157",
+                    "surface-container-highest": "#e1e3e2",
+                    "surface-tint": "#006c45",
+                    "on-error": "#ffffff",
+                    "primary": "#006a43",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f0f1f0",
+                    "on-background": "#191c1c",
+                    "tertiary-fixed-dim": "#b5ccc0",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e1e3e2",
+                    "surface-bright": "#f9f9f8",
+                    "primary-fixed": "#7efaba",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e7e8e7",
+                    "on-surface-variant": "#3d4a41",
+                    "on-tertiary-fixed": "#0b1f18",
+                    "primary-fixed-dim": "#60dd9f",
+                    "on-primary-fixed": "#002112",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#64f9ba",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed": "#d0e8dc",
+                    "on-surface": "#191c1c",
+                    "outline-variant": "#bccabf",
+                    "primary-container": "#008656",
+                    "surface-dim": "#d9dad9",
+                    "background": "#f9f9f8",
+                    "on-primary-fixed-variant": "#005233",
+                    "outline": "#6d7a71",
+                    "inverse-primary": "#60dd9f",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#45dfa2",
+                    "error-container": "#ffdad6",
+                    "surface": "#f9f9f8",
+                    "surface-container": "#edeeed",
+                    "tertiary-container": "#64796f",
+                    "on-primary-container": "#f6fff6",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2e3131",
+                    "on-tertiary-fixed-variant": "#374b42",
+                    "secondary-fixed": "#68fcbc",
+                    "on-secondary-container": "#00714d",
+                    "surface-container-low": "#f3f4f3",
+                    "on-tertiary-container": "#f5fff8",
+                    "secondary": "#006c49"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-lg": "32px",
+                    "card-padding": "24px",
+                    "container-margin": "20px",
+                    "stack-gap-md": "16px",
+                    "stack-gap-sm": "8px",
+                    "gutter": "12px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "display-numeral": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-numeral": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface">
+<div class="flex justify-between items-center px-container-margin py-stack-gap-md w-full max-w-7xl mx-auto">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary dark:text-primary-fixed">Maqsadlar</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-200 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A professional and serene portrait of a young Central Asian man with a neatly trimmed beard, wearing a minimalist modern linen shirt. He is set against a soft-focus background of a clean, light-filled architectural space with natural wood accents. The lighting is warm and ethereal, embodying the spiritual minimalism aesthetic of the Mizan brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2c7nyYzuY8qt_3giRJuSWRKBnoGZADQpjsmrn-tAmlVno6U4jh6_SB8B-HzsoWN3wD9dL-Bd1FdimhiYi6pPb5zNcpR8psBuTcBEewVTOdxuKbY3ILVRXRTAOJk2aSnabXMXVnvXI-WJH9WFdUcDgZIT56eRTjZMevRFln5LZfi5A57mgdJ18UmzPRszmCXzJLfX5EvOmKnp6_pZ4KZW8X4PGTPvaYbNfi59kDF1IeNoPhx1ov6n0hZHfoq5XmiAet4_hn6FDTEY6">
+</div>
+</div>
+</header>
+<main class="px-container-margin space-y-stack-gap-lg max-w-7xl mx-auto mt-4">
+<!-- Section: Uzoq muddatli -->
+<section>
+<div class="flex items-center justify-between mb-stack-gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Uzoq muddatli</h2>
+<span class="text-primary font-label-caps text-label-caps cursor-pointer">Hammasi</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-gap-md">
+<!-- Goal Card 1 -->
+<div class="glass-card p-card-padding rounded-xl shadow-[0_10px_30px_rgba(15,163,107,0.08)] flex items-center justify-between border border-outline-variant/20 group hover:shadow-[0_15px_40px_rgba(15,163,107,0.12)] transition-all duration-300">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-outline uppercase">Til o'rganish</p>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Ingliz tili (C1)</h3>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-primary text-sm">calendar_month</span>
+<span class="font-body-sm text-body-sm text-outline">31-dekabr</span>
+</div>
+</div>
+<div class="relative flex items-center justify-center">
+<svg class="w-20 h-20">
+<circle class="text-surface-container-high" cx="40" cy="40" fill="transparent" r="32" stroke="currentColor" stroke-width="6"></circle>
+<circle class="progress-ring-circle text-primary" cx="40" cy="40" fill="transparent" r="32" stroke="currentColor" stroke-dasharray="201" stroke-dashoffset="114" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-bold text-on-surface text-lg leading-none">3/7</span>
+<span class="text-[10px] text-outline uppercase font-bold">bosqich</span>
+</div>
+</div>
+</div>
+<!-- Goal Card 2 -->
+<div class="glass-card p-card-padding rounded-xl shadow-[0_10px_30px_rgba(15,163,107,0.08)] flex items-center justify-between border border-outline-variant/20 group hover:shadow-[0_15px_40px_rgba(15,163,107,0.12)] transition-all duration-300">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-outline uppercase">Salomatlik</p>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Sog'lom turmush tarzi</h3>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-primary text-sm">calendar_month</span>
+<span class="font-body-sm text-body-sm text-outline">1-iyul</span>
+</div>
+</div>
+<div class="relative flex items-center justify-center">
+<svg class="w-20 h-20">
+<circle class="text-surface-container-high" cx="40" cy="40" fill="transparent" r="32" stroke="currentColor" stroke-width="6"></circle>
+<circle class="progress-ring-circle text-primary" cx="40" cy="40" fill="transparent" r="32" stroke="currentColor" stroke-dasharray="201" stroke-dashoffset="100.5" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-bold text-on-surface text-lg leading-none">5/10</span>
+<span class="text-[10px] text-outline uppercase font-bold">bosqich</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Challenge'lar -->
+<section class="overflow-hidden -mx-container-margin">
+<div class="px-container-margin flex items-center justify-between mb-stack-gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Challenge'lar</h2>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-outline hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-outline hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-stack-gap-md px-container-margin pb-6 hide-scrollbar snap-x">
+<!-- Challenge Card 1 -->
+<div class="min-w-[280px] snap-start glass-card p-card-padding rounded-2xl shadow-[0_10px_30px_rgba(15,163,107,0.08)] border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="mb-4">
+<span class="bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-[10px] uppercase tracking-wider">30 kun</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 leading-tight">30 kunlik Qur'on xatmi</h3>
+<button class="w-full primary-gradient text-white py-3 rounded-xl font-bold font-label-caps hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20">Boshlash</button>
+</div>
+<!-- Challenge Card 2 -->
+<div class="min-w-[280px] snap-start glass-card p-card-padding rounded-2xl shadow-[0_10px_30px_rgba(15,163,107,0.08)] border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="mb-4">
+<span class="bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-[10px] uppercase tracking-wider">21 kun</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 leading-tight">21 kunlik Bomdod challenge</h3>
+<button class="w-full primary-gradient text-white py-3 rounded-xl font-bold font-label-caps hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20">Boshlash</button>
+</div>
+<!-- Challenge Card 3 -->
+<div class="min-w-[280px] snap-start glass-card p-card-padding rounded-2xl shadow-[0_10px_30px_rgba(15,163,107,0.08)] border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="mb-4">
+<span class="bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-[10px] uppercase tracking-wider">90 kun</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 leading-tight">90 kunlik Intizom va tartib</h3>
+<button class="w-full primary-gradient text-white py-3 rounded-xl font-bold font-label-caps hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20">Boshlash</button>
+</div>
+</div>
+</section>
+<!-- Aesthetic Motivational Quote Card -->
+<div class="w-full relative overflow-hidden rounded-2xl p-card-padding text-white primary-gradient">
+<div class="absolute inset-0 opacity-10">
+<img class="w-full h-full object-cover" data-alt="A subtle and elegant vector pattern of stylized geometric Islamic stars and crescent moon silhouettes. The pattern is low-contrast, designed to blend into a lush green emerald gradient background, creating a sense of deep spiritual texture and sophisticated minimalism for a high-end app dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnY1PgbR7qqo-vePeO1cz-ZK8FRE6iyyLZnN56gpYQXrmSlCVapMBYemaUXNyBVNZRquivULar7ZK225jwXMttb8xWIs5H9SKMJrAzYOWfObDJZn4WGVorVTeOLtv9_4fvpMne_nJjbCczYFTlc1LQmJ8rkhz2_YxrjbD9ZoUt8HfIumFN94yF90htL-z0iM2_95nPzsjLbIGb-AEDk1dD-K3WAhr30TrrSv0r3qBFoixIW1qTw0qBBcK9RSo88nRvU22ekao1BDh">
+</div>
+<div class="relative z-10 space-y-2">
+<span class="material-symbols-outlined opacity-60">format_quote</span>
+<p class="font-body-lg text-body-lg italic leading-relaxed">"Eng yaxshi amallar – oz bo'lsa-da, davomli bo'lganidir."</p>
+<p class="font-label-caps text-label-caps opacity-80 pt-2">— Hadis sharifi</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md rounded-t-xl shadow-[0_-10px_30px_rgba(15,163,107,0.08)] flex justify-around items-center px-4 pt-2 pb-safe-area-inset-bottom h-20">
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant hover:text-primary-container dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-caps text-label-caps mt-1">Bugun</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">target</span>
+<span class="font-label-caps text-label-caps mt-1">Maqsadlar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant hover:text-primary-container dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps mt-1">Moliya</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant hover:text-primary-container dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">balance</span>
+<span class="font-label-caps text-label-caps mt-1">Mizan</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for horizontal scrolling buttons
+        const scrollContainer = document.querySelector('.overflow-x-auto');
+        const scrollNext = document.querySelectorAll('button')[1];
+        const scrollPrev = document.querySelectorAll('button')[0];
+
+        if (scrollNext && scrollPrev && scrollContainer) {
+            scrollNext.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+            scrollPrev.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+        }
+    </script>
+
+
+</body></html>

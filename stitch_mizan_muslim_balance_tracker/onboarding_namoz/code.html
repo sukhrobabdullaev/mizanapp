@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Namoz Sozlamalari - Mizan Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9f8",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#64796f",
+                        "inverse-surface": "#2e3131",
+                        "on-surface-variant": "#3d4a41",
+                        "secondary-container": "#64f9ba",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-highest": "#e1e3e2",
+                        "surface-tint": "#006c45",
+                        "primary-fixed": "#7efaba",
+                        "tertiary-fixed-dim": "#b5ccc0",
+                        "on-background": "#191c1c",
+                        "surface-container-low": "#f3f4f3",
+                        "surface-container": "#edeeed",
+                        "on-primary-container": "#f6fff6",
+                        "surface-dim": "#d9dad9",
+                        "on-error": "#ffffff",
+                        "tertiary": "#4b6157",
+                        "on-primary-fixed": "#002112",
+                        "on-tertiary-fixed": "#0b1f18",
+                        "inverse-primary": "#60dd9f",
+                        "on-secondary-container": "#00714d",
+                        "secondary-fixed": "#68fcbc",
+                        "primary-fixed-dim": "#60dd9f",
+                        "on-surface": "#191c1c",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#d0e8dc",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006c49",
+                        "surface-bright": "#f9f9f8",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e1e3e2",
+                        "secondary-fixed-dim": "#45dfa2",
+                        "on-tertiary-container": "#f5fff8",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f8",
+                        "on-tertiary-fixed-variant": "#374b42",
+                        "outline": "#6d7a71",
+                        "inverse-on-surface": "#f0f1f0",
+                        "outline-variant": "#bccabf",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#005233",
+                        "primary-container": "#008656"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-sm": "8px",
+                        "stack-gap-md": "16px",
+                        "stack-gap-lg": "32px",
+                        "gutter": "12px",
+                        "container-margin": "20px",
+                        "card-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "display-numeral": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-numeral": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                        "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .premium-shadow {
+            box-shadow: 0 10px 30px rgba(15, 163, 107, 0.08);
+        }
+
+        .primary-gradient {
+            background: linear-gradient(135deg, #0FA36B 0%, #4EE6A8 100%);
+        }
+
+        .ethereal-bg {
+            background: radial-gradient(circle at top right, rgba(15, 163, 107, 0.05), transparent),
+                        radial-gradient(circle at bottom left, rgba(78, 230, 168, 0.03), transparent);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-lg min-h-screen flex flex-col ethereal-bg selection:bg-secondary-container">
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-between px-container-margin py-stack-gap-lg max-w-md mx-auto w-full overflow-hidden">
+<!-- Illustration Section -->
+<div class="w-full flex flex-col items-center justify-center pt-stack-gap-lg fade-in">
+<div class="relative w-64 h-64 mb-stack-gap-md flex items-center justify-center">
+<!-- Decorative Ethereal Glow -->
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl"></div>
+<!-- Mosque/Crescent Minimal Illustration -->
+<div class="relative z-10 w-48 h-48 bg-surface-container-lowest rounded-full premium-shadow flex items-center justify-center border border-outline-variant/30 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A minimalist vector illustration of a modern mosque silhouette with a delicate crescent moon overhead. The style is clean and spiritual, using a soft emerald and white color palette. Soft, ethereal lighting creates a sense of tranquility and balance, perfectly reflecting a high-end spiritual SaaS aesthetic." style="background-image: url('')"></div>
+</div>
+</div>
+<div class="text-center space-y-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Namoz vaqtlari</h1>
+<p class="font-body-lg text-on-surface-variant/80 px-4">Joylashuvingiz asosida aniq vaqtlar va bildirishnomalar</p>
+</div>
+</div>
+<!-- Configuration Card Section -->
+<div class="w-full space-y-stack-gap-md fade-in" style="animation-delay: 0.2s;">
+<div class="bg-surface-container-lowest rounded-xl p-card-padding premium-shadow border border-outline-variant/10">
+<div class="space-y-stack-gap-md">
+<!-- Calculation Method -->
+<div class="flex items-center justify-between group cursor-pointer active:scale-98 transition-transform">
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-outline uppercase">Hisoblash usuli</span>
+<span class="text-body-lg font-semibold text-on-surface">O'zbekiston Musulmonlari Idorasi</span>
+</div>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="h-px bg-outline-variant/20 w-full"></div>
+<!-- Madhab Selection -->
+<div class="flex items-center justify-between group cursor-pointer active:scale-98 transition-transform">
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-outline uppercase">Asr vaqti</span>
+<span class="text-body-lg font-semibold text-on-surface">Hanafiy</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-caps font-label-caps text-primary bg-primary/10 px-2 py-1 rounded-full">Standart</span>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Location Meta -->
+<div class="flex items-center justify-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-body-sm">Joylashuv aniqlanmagan</span>
+</div>
+</div>
+<!-- Action Section -->
+<div class="w-full space-y-stack-gap-md mb-stack-gap-lg fade-in" style="animation-delay: 0.4s;">
+<!-- Primary Action -->
+<button class="w-full h-14 primary-gradient text-on-primary rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.97] transition-all duration-200">
+<span class="material-symbols-outlined">near_me</span>
+                Joylashuvga ruxsat berish
+            </button>
+<!-- Secondary Action -->
+<button class="w-full py-3 text-secondary font-semibold hover:bg-secondary/5 rounded-lg transition-colors text-center active:scale-95">
+                Keyinroq
+            </button>
+</div>
+<!-- Pagination Dots -->
+<div class="flex gap-2 items-center mb-safe-area-inset-bottom">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-6 h-2 rounded-full primary-gradient"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+</main>
+<!-- Visual Polish: Micro-interactions -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('touchstart', () => {
+                    btn.classList.add('opacity-90');
+                });
+                btn.addEventListener('touchend', () => {
+                    btn.classList.remove('opacity-90');
+                });
+            });
+
+            // Simulate a "ripple" or subtle pulse on the location icon
+            const locationIcon = document.querySelector('.material-symbols-outlined.text-\\[20px\\]');
+            if(locationIcon) {
+                setInterval(() => {
+                    locationIcon.classList.add('scale-110', 'text-primary');
+                    setTimeout(() => {
+                        locationIcon.classList.remove('scale-110', 'text-primary');
+                    }, 1000);
+                }, 3000);
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Mizan - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f9f9f8",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#64796f",
+                    "inverse-surface": "#2e3131",
+                    "on-surface-variant": "#3d4a41",
+                    "secondary-container": "#64f9ba",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container-highest": "#e1e3e2",
+                    "surface-tint": "#006c45",
+                    "primary-fixed": "#7efaba",
+                    "tertiary-fixed-dim": "#b5ccc0",
+                    "on-background": "#191c1c",
+                    "surface-container-low": "#f3f4f3",
+                    "surface-container": "#edeeed",
+                    "on-primary-container": "#f6fff6",
+                    "surface-dim": "#d9dad9",
+                    "on-error": "#ffffff",
+                    "tertiary": "#4b6157",
+                    "on-primary-fixed": "#002112",
+                    "on-tertiary-fixed": "#0b1f18",
+                    "inverse-primary": "#60dd9f",
+                    "on-secondary-container": "#00714d",
+                    "secondary-fixed": "#68fcbc",
+                    "primary-fixed-dim": "#60dd9f",
+                    "on-surface": "#191c1c",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#d0e8dc",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#006c49",
+                    "surface-container-high": "#e7e8e7",
+                    "primary": "#006a43",
+                    "surface-bright": "#f9f9f8",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e1e3e2",
+                    "secondary-fixed-dim": "#45dfa2",
+                    "on-tertiary-container": "#f5fff8",
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9f8",
+                    "on-tertiary-fixed-variant": "#374b42",
+                    "outline": "#6d7a71",
+                    "inverse-on-surface": "#f0f1f0",
+                    "outline-variant": "#bccabf",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#005233",
+                    "primary-container": "#008656"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-sm": "8px",
+                    "stack-gap-md": "16px",
+                    "stack-gap-lg": "32px",
+                    "gutter": "12px",
+                    "container-margin": "20px",
+                    "card-padding": "24px"
+            },
+            "fontFamily": {
+                    "display-numeral": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-numeral": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .primary-gradient-bg {
+            background: linear-gradient(135deg, #006a43 0%, #45dfa2 100%);
+        }
+
+        .primary-gradient-text {
+            background: linear-gradient(135deg, #006a43 0%, #45dfa2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 10px 30px rgba(15, 163, 107, 0.08);
+        }
+
+        .floating-anim {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .blur-orb {
+            filter: blur(80px);
+            opacity: 0.4;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-lg text-body-lg min-h-screen flex flex-col overflow-hidden">
+<!-- Atmospheric Background Elements -->
+<div class="blur-orb bg-secondary w-64 h-64 -top-20 -left-20 rounded-full"></div>
+<div class="blur-orb bg-primary-fixed w-80 h-80 top-1/3 -right-20 rounded-full"></div>
+<main class="flex-grow flex flex-col items-center justify-center px-container-margin relative z-10">
+<!-- Illustration Area (Scale of Balance) -->
+<div class="w-full max-w-sm aspect-square relative flex items-center justify-center mb-stack-gap-lg">
+<div class="absolute inset-0 primary-gradient-bg opacity-5 rounded-full scale-110"></div>
+<!-- Scale Illustration (Abstract Minimalist) -->
+<div class="relative w-full h-full flex items-center justify-center floating-anim">
+<div class="w-64 h-64 rounded-full border border-outline-variant/30 flex items-center justify-center">
+<div class="w-48 h-48 rounded-full border-2 border-primary/20 flex items-center justify-center">
+<!-- Hero Image Placeholder -->
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low shadow-inner flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A minimalist high-end digital illustration of a balanced golden scale suspended in a serene white space. One side of the scale holds a glowing green crescent moon symbol and the other side holds a sleek modern clock. The aesthetic is clean, spiritual minimalism with soft emerald and white gradients, illuminated by a soft morning light that evokes tranquility and discipline." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC2MjLrXb_LAVijj9zi1Dk04oNRS6dsJiNKHGt_ATCvGX8JUA7-k91vZF-rUdOBQmgjnhNojbRVjjZmi7bJIM-aam9G9mbCIEQ5tx4QXo1NxPfNgEpxsoxbxA59T4D1ktBLfwkc5VReFLd0qTwwd3CuFd0QwfJNCP8w3BMhV0LwTXm1ziQfOWwp-Q4Vy6WfDQf4hoJt2QPugzWnwpyEnwf5xmDJBYWNLEC5PlHFhYL84e9VESP8NCJ1GfQq5tosR8jGt9P4-S_WQt9"/>
+</div>
+</div>
+</div>
+<!-- Decorative Particles -->
+<div class="absolute top-1/4 right-1/4 w-3 h-3 bg-secondary-fixed-dim rounded-full animate-pulse"></div>
+<div class="absolute bottom-1/4 left-10 w-2 h-2 bg-primary rounded-full opacity-40"></div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="w-full max-w-md text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-stack-gap-md px-4 leading-tight">
+                Diyn va dunyo muvozanati
+            </h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg px-6 leading-relaxed opacity-80">
+                Maqsadlar, namoz, moliya va haftalik muhosaba, bitta ilovada
+            </p>
+</div>
+</main>
+<!-- Footer Controls -->
+<footer class="w-full px-container-margin pb-12 flex flex-col items-center gap-stack-gap-lg">
+<!-- Progress Dots -->
+<div class="flex gap-2">
+<div class="h-1.5 w-8 rounded-full primary-gradient-bg"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-outline-variant"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Action Button -->
+<div class="w-full max-w-sm">
+<button class="w-full py-5 rounded-xl primary-gradient-bg text-on-primary font-headline-md text-headline-md ambient-shadow active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group" onclick="handleStart()">
+                Boshlash
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        function handleStart() {
+            // Logic for navigation to the next onboarding step
+            console.log('Starting onboarding journey...');
+            
+            // Visual feedback
+            const btn = event.currentTarget;
+            btn.style.opacity = '0.9';
+            
+            setTimeout(() => {
+                // Mock transition
+                document.body.style.opacity = '0';
+                document.body.style.transition = 'opacity 0.5s ease-in-out';
+            }, 200);
+        }
+
+        // Add subtle parallax to orbs on mouse move (desktop only)
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', (e) => {
+                const orbs = document.querySelectorAll('.blur-orb');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                orbs.forEach((orb, index) => {
+                    const speed = (index + 1) * 20;
+                    orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                });
+            });
+        }
+    </script>
+</body></html>

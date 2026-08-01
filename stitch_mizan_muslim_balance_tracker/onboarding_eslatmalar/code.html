@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Mizan - Eslatmalar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f9f9f8",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#64796f",
+                    "inverse-surface": "#2e3131",
+                    "on-surface-variant": "#3d4a41",
+                    "secondary-container": "#64f9ba",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container-highest": "#e1e3e2",
+                    "surface-tint": "#006c45",
+                    "primary-fixed": "#7efaba",
+                    "tertiary-fixed-dim": "#b5ccc0",
+                    "on-background": "#191c1c",
+                    "surface-container-low": "#f3f4f3",
+                    "surface-container": "#edeeed",
+                    "on-primary-container": "#f6fff6",
+                    "surface-dim": "#d9dad9",
+                    "on-error": "#ffffff",
+                    "tertiary": "#4b6157",
+                    "on-primary-fixed": "#002112",
+                    "on-tertiary-fixed": "#0b1f18",
+                    "inverse-primary": "#60dd9f",
+                    "on-secondary-container": "#00714d",
+                    "secondary-fixed": "#68fcbc",
+                    "primary-fixed-dim": "#60dd9f",
+                    "on-surface": "#191c1c",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#d0e8dc",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#006c49",
+                    "surface-container-high": "#e7e8e7",
+                    "primary": "#006a43",
+                    "surface-bright": "#f9f9f8",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e1e3e2",
+                    "secondary-fixed-dim": "#45dfa2",
+                    "on-tertiary-container": "#f5fff8",
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9f8",
+                    "on-tertiary-fixed-variant": "#374b42",
+                    "outline": "#6d7a71",
+                    "inverse-on-surface": "#f0f1f0",
+                    "outline-variant": "#bccabf",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#005233",
+                    "primary-container": "#008656"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-sm": "8px",
+                    "stack-gap-md": "16px",
+                    "stack-gap-lg": "32px",
+                    "gutter": "12px",
+                    "container-margin": "20px",
+                    "card-padding": "24px"
+            },
+            "fontFamily": {
+                    "display-numeral": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-numeral": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f8;
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, #0FA36B 0%, #4EE6A8 100%);
+        }
+        .bell-ring {
+            animation: ring 4s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+        }
+        @keyframes ring {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 0.3; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+        .delay-1 { animation-delay: 1s; }
+        .delay-2 { animation-delay: 2s; }
+        
+        .toggle-checkbox:checked + .toggle-slot {
+            background-color: #006a43;
+        }
+        .toggle-checkbox:checked + .toggle-slot .toggle-dot {
+            transform: translateX(1.5rem);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-lg text-on-surface selection:bg-secondary-container">
+<!-- Onboarding Canvas -->
+<main class="min-h-screen flex flex-col px-container-margin pt-stack-gap-lg pb-safe-area-inset-bottom">
+<!-- Illustration Section -->
+<div class="flex-grow flex flex-col items-center justify-center relative py-stack-gap-lg overflow-hidden">
+<!-- Animated Background Rings -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bell-ring w-48 h-48 rounded-full border-2 border-primary/20"></div>
+<div class="bell-ring delay-1 w-64 h-64 rounded-full border-2 border-primary/10"></div>
+<div class="bell-ring delay-2 w-80 h-80 rounded-full border-2 border-primary/5"></div>
+</div>
+<!-- Central Icon Asset -->
+<div class="relative z-10 w-40 h-40 bg-surface-container-lowest rounded-full shadow-[0_10px_30px_rgba(15,163,107,0.08)] flex items-center justify-center mb-stack-gap-lg">
+<span class="material-symbols-outlined text-[80px] text-primary" style="font-variation-settings: 'wght' 200;">notifications_active</span>
+</div>
+<!-- Copy -->
+<div class="text-center z-10 max-w-xs mx-auto">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Eslatmalar</h1>
+<p class="font-body-sm text-on-surface-variant opacity-80">Azon vaqtida va har yakshanba muhosaba uchun</p>
+</div>
+</div>
+<!-- Toggles Section (Bento-lite) -->
+<section class="space-y-stack-gap-sm mb-stack-gap-lg">
+<!-- Toggle Item 1 -->
+<label class="flex items-center justify-between p-card-padding bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(15,163,107,0.04)] border border-outline-variant/20 cursor-pointer active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+</div>
+<span class="font-body-lg font-semibold text-on-surface">Azon eslatmasi</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer hidden" id="toggle1" name="toggle" type="checkbox"/>
+<div class="toggle-slot block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300">
+<div class="toggle-dot w-6 h-6 bg-white rounded-full border-2 border-transparent transition-transform duration-300"></div>
+</div>
+</div>
+</label>
+<!-- Toggle Item 2 -->
+<label class="flex items-center justify-between p-card-padding bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(15,163,107,0.04)] border border-outline-variant/20 cursor-pointer active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">wb_sunny</span>
+</div>
+<span class="font-body-lg font-semibold text-on-surface">Ertalabki reja</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer hidden" id="toggle2" name="toggle" type="checkbox"/>
+<div class="toggle-slot block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300">
+<div class="toggle-dot w-6 h-6 bg-white rounded-full border-2 border-transparent transition-transform duration-300"></div>
+</div>
+</div>
+</label>
+<!-- Toggle Item 3 -->
+<label class="flex items-center justify-between p-card-padding bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(15,163,107,0.04)] border border-outline-variant/20 cursor-pointer active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+</div>
+<span class="font-body-lg font-semibold text-on-surface">Haftalik muhosaba</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer hidden" id="toggle3" name="toggle" type="checkbox"/>
+<div class="toggle-slot block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300">
+<div class="toggle-dot w-6 h-6 bg-white rounded-full border-2 border-transparent transition-transform duration-300"></div>
+</div>
+</div>
+</label>
+</section>
+<!-- Actions -->
+<footer class="mt-auto space-y-4 pb-8">
+<button class="w-full bg-primary-gradient text-white py-5 rounded-2xl font-headline-md text-headline-md shadow-[0_12px_24px_rgba(15,163,107,0.2)] active:scale-95 transition-transform duration-200" onclick="window.location.reload()">
+                Ruxsat berish
+            </button>
+<button class="w-full text-center py-2 font-body-sm text-outline hover:text-primary transition-colors">
+                O'tkazib yuborish
+            </button>
+<!-- Page Dots -->
+<div class="flex justify-center items-center gap-2 pt-4">
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+<div class="w-6 h-2 rounded-full bg-primary-gradient"></div>
+</div>
+</footer>
+</main>
+<script>
+        // Simple toggle logic for the custom UI
+        document.querySelectorAll('.toggle-slot').forEach(slot => {
+            slot.addEventListener('click', (e) => {
+                const checkbox = slot.previousElementSibling;
+                checkbox.checked = !checkbox.checked;
+            });
+        });
+
+        // Add subtle hover effect for cards
+        document.querySelectorAll('label').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.boxShadow = '0 10px 20px rgba(15, 163, 107, 0.08)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '0 4px 12px rgba(15, 163, 107, 0.04)';
+            });
+        });
+    </script>
+</body></html>

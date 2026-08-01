@@ -1,0 +1,44 @@
+# Production image: non-root, no dev tooling, gunicorn + whitenoise.
+FROM python:3.12-slim AS base
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libpq5 curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install only runtime dependencies — everything below the "dev / tooling"
+# marker in requirements.txt stays out of the production image.
+COPY requirements.txt .
+RUN sed '/^# dev \/ tooling/,$d' requirements.txt > requirements.prod.txt \
+    && pip install --no-cache-dir -r requirements.prod.txt
+
+COPY . .
+
+# Collected at build time so the container starts without writing to disk.
+# SECRET_KEY/DATABASE_URL are placeholders: collectstatic never touches the DB.
+RUN SECRET_KEY=build-only \
+    DATABASE_URL=postgresql://build:build@localhost:5432/build \
+    DEBUG=False \
+    python manage.py collectstatic --noinput
+
+RUN useradd --create-home --uid 10001 mizan \
+    && chown -R mizan:mizan /app
+USER mizan
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
+    CMD curl -fsS http://localhost:8000/api/health/ || exit 1
+
+CMD ["gunicorn", "config.wsgi:application", \
+     "--bind", "0.0.0.0:8000", \
+     "--workers", "3", \
+     "--threads", "2", \
+     "--timeout", "60", \
+     "--access-logfile", "-", \
+     "--error-logfile", "-"]

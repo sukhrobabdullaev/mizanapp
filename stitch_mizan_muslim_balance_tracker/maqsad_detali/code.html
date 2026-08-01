@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Mizan - Maqsad Detali</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f9f9f8",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#64796f",
+                    "inverse-surface": "#2e3131",
+                    "on-surface-variant": "#3d4a41",
+                    "secondary-container": "#64f9ba",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container-highest": "#e1e3e2",
+                    "surface-tint": "#006c45",
+                    "primary-fixed": "#7efaba",
+                    "tertiary-fixed-dim": "#b5ccc0",
+                    "on-background": "#191c1c",
+                    "surface-container-low": "#f3f4f3",
+                    "surface-container": "#edeeed",
+                    "on-primary-container": "#f6fff6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#006c49",
+                    "surface-container-high": "#e7e8e7",
+                    "primary": "#006a43",
+                    "surface-bright": "#f9f9f8",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e1e3e2",
+                    "secondary-fixed-dim": "#45dfa2",
+                    "on-tertiary-container": "#f5fff8",
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9f8",
+                    "on-tertiary-fixed-variant": "#374b42",
+                    "outline": "#6d7a71",
+                    "inverse-on-surface": "#f0f1f0",
+                    "outline-variant": "#bccabf",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#005233",
+                    "primary-container": "#008656"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-sm": "8px",
+                    "stack-gap-md": "16px",
+                    "stack-gap-lg": "32px",
+                    "gutter": "12px",
+                    "container-margin": "20px",
+                    "card-padding": "24px"
+            },
+            "fontFamily": {
+                    "display-numeral": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-numeral": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0FA36B 0%, #4EE6A8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0FA36B 0%, #4EE6A8 100%);
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(15, 163, 107, 0.08);
+        }
+        .milestone-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .milestone-active .milestone-content {
+            max-height: 500px;
+        }
+        .milestone-active .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .chevron-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen font-body-lg text-body-lg">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface flex justify-between items-center px-container-margin py-stack-gap-md w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<button class="active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary">chevron_left</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface">Ingliz tili (C1)</h1>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-purple-500"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Ilmiy</span>
+</div>
+</div>
+</div>
+<button class="active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary">edit</span>
+</button>
+</header>
+<main class="px-container-margin pb-32">
+<!-- Hero Section -->
+<section class="bg-surface-container-lowest rounded-xl p-card-padding card-shadow mb-stack-gap-lg flex items-center gap-stack-gap-lg overflow-hidden relative">
+<!-- Progress Ring -->
+<div class="relative flex-shrink-0 w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full">
+<circle class="text-surface-container" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="progress-ring-circle" cx="64" cy="64" fill="transparent" r="58" stroke="url(#gradient)" stroke-dasharray="364.4" stroke-dashoffset="207.7" stroke-linecap="round" stroke-width="8"></circle>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#0FA36B"></stop>
+<stop offset="100%" stop-color="#4EE6A8"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="font-display-numeral text-display-numeral text-[32px] leading-tight gradient-text">43%</span>
+</div>
+</div>
+<!-- Stats Column -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">flag</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">3/7 bosqich</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">event</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">31-dekabr</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-primary/5 rounded-full w-fit">
+<span class="text-[16px]">🔥</span>
+<span class="font-label-caps text-label-caps font-bold text-primary">12 kun</span>
+</div>
+</div>
+</section>
+<!-- Milestones -->
+<div class="flex flex-col gap-stack-gap-md">
+<!-- Active Milestone (B2 darajaga yetish) -->
+<div class="milestone-container milestone-active group">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl card-shadow cursor-pointer" onclick="toggleMilestone(this.parentElement)">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-[18px] text-on-surface">B2 darajaga yetish</h3>
+<div class="flex items-center gap-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant">15-avgust</span>
+<div class="flex items-center gap-1">
+<div class="w-16 h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full gradient-bg w-[66%]"></div>
+</div>
+<span class="font-label-caps text-label-caps text-primary">4/6</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant chevron-icon">expand_more</span>
+</div>
+<!-- Expanded Content -->
+<div class="milestone-content mt-2 space-y-2 px-1">
+<!-- Task Item 1 -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<button class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center transition-all" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[16px] text-white hidden">check</span>
+</button>
+<div class="flex flex-col">
+<span class="text-body-sm font-medium text-on-surface">Grammatika: Unit 12</span>
+<span class="font-label-caps text-[10px] text-primary">Bugun</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">more_vert</span>
+</div>
+<!-- Task Item 2 (Completed) -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant/30 opacity-70">
+<div class="flex items-center gap-3">
+<button class="w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+<div class="flex flex-col">
+<span class="text-body-sm font-medium text-on-surface line-through">Vocabulary list: Science</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Kecha</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">more_vert</span>
+</div>
+<!-- Task Item 3 -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<button class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center transition-all" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[16px] text-white hidden">check</span>
+</button>
+<div class="flex flex-col">
+<span class="text-body-sm font-medium text-on-surface">Practice Test #4</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Ertaga</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">more_vert</span>
+</div>
+</div>
+</div>
+<!-- Second Collapsed Milestone -->
+<div class="milestone-container group">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl card-shadow cursor-pointer" onclick="toggleMilestone(this.parentElement)">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-[18px] text-on-surface">C1 Reading & Listening</h3>
+<div class="flex items-center gap-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant">20-sentabr</span>
+<div class="flex items-center gap-1">
+<div class="w-16 h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full gradient-bg w-[0%]"></div>
+</div>
+<span class="font-label-caps text-label-caps text-outline">0/8</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant chevron-icon">expand_more</span>
+</div>
+<div class="milestone-content mt-2 space-y-2 px-1">
+<p class="text-center py-4 text-body-sm text-outline italic">Vazifalar hali belgilanmagan</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-10 right-6 gradient-bg text-white flex items-center gap-2 px-6 py-4 rounded-full shadow-lg active:scale-95 transition-transform duration-200 z-50">
+<span class="material-symbols-outlined">add</span>
+<span class="font-label-caps text-label-caps font-bold">Vazifa qo'shish</span>
+</button>
+<script>
+        function toggleMilestone(element) {
+            element.classList.toggle('milestone-active');
+        }
+
+        function toggleTask(button) {
+            const icon = button.querySelector('span');
+            const label = button.parentElement.querySelector('.text-body-sm');
+            const parent = button.closest('div.flex.items-center.justify-between');
+            
+            if (button.classList.contains('gradient-bg')) {
+                button.classList.remove('gradient-bg');
+                button.classList.add('border-2', 'border-primary');
+                icon.classList.add('hidden');
+                label.classList.remove('line-through');
+                parent.classList.remove('opacity-70');
+            } else {
+                button.classList.add('gradient-bg');
+                button.classList.remove('border-2', 'border-primary');
+                icon.classList.remove('hidden');
+                label.classList.add('line-through');
+                parent.classList.add('opacity-70');
+            }
+        }
+    </script>
+</body></html>

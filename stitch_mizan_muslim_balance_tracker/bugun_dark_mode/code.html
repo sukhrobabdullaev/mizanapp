@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Mizan - Bugun</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#4b6157",
+                    "surface-container-highest": "#1E2B24",
+                    "surface-tint": "#0FA36B",
+                    "on-error": "#ffffff",
+                    "primary": "#4EE6A8",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#191c1c",
+                    "on-background": "#ffffff",
+                    "tertiary-fixed-dim": "#b5ccc0",
+                    "on-secondary": "#002113",
+                    "surface-variant": "#1E2B24",
+                    "surface-bright": "#121E18",
+                    "primary-fixed": "#7efaba",
+                    "on-secondary-fixed-variant": "#64f9ba",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#1E2B24",
+                    "on-surface-variant": "#8A9690",
+                    "on-tertiary-fixed": "#0b1f18",
+                    "primary-fixed-dim": "#60dd9f",
+                    "on-primary-fixed": "#002112",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#005236",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed": "#d0e8dc",
+                    "on-surface": "#ffffff",
+                    "outline-variant": "#1E2B24",
+                    "primary-container": "#006c45",
+                    "surface-dim": "#0A1712",
+                    "background": "#0A1712",
+                    "on-primary-fixed-variant": "#005233",
+                    "outline": "#8A9690",
+                    "inverse-primary": "#006a43",
+                    "surface-container-lowest": "#0A1712",
+                    "secondary-fixed-dim": "#45dfa2",
+                    "error-container": "#93000a",
+                    "surface": "#0A1712",
+                    "surface-container": "#121E18",
+                    "tertiary-container": "#374b42",
+                    "on-primary-container": "#7efaba",
+                    "on-primary": "#003922",
+                    "inverse-surface": "#e1e3e2",
+                    "on-tertiary-fixed-variant": "#374b42",
+                    "secondary-fixed": "#68fcbc",
+                    "on-secondary-container": "#64f9ba",
+                    "surface-container-low": "#0D1B15",
+                    "on-tertiary-container": "#d0e8dc",
+                    "secondary": "#45dfa2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-lg": "32px",
+                    "card-padding": "24px",
+                    "container-margin": "20px",
+                    "stack-gap-md": "16px",
+                    "stack-gap-sm": "8px",
+                    "gutter": "12px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "display-numeral": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-numeral": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .gradient-brand {
+            background: linear-gradient(135deg, #0A7A50 0%, #0FA36B 50%, #4EE6A8 100%);
+        }
+        .gradient-glow {
+            box-shadow: 0 0 20px rgba(78, 230, 168, 0.2);
+        }
+        .glass-nav {
+            background: rgba(10, 23, 18, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .prayer-toggle-active {
+            background: linear-gradient(135deg, #0FA36B 0%, #4EE6A8 100%);
+            box-shadow: 0 4px 12px rgba(78, 230, 168, 0.25);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .card-border {
+            border: 1px solid #1E2B24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="w-full top-0 sticky z-50 bg-background/90 backdrop-blur-md flex justify-between items-center px-container-margin py-stack-gap-md max-w-7xl mx-auto border-b border-surface-container-highest">
+<div class="flex flex-col">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary">Mizan</h1>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Dushanba, 14-Ramazon</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-outline">settings</span>
+</button>
+</header>
+<main class="px-container-margin space-y-stack-gap-lg max-w-2xl mx-auto mt-4">
+<!-- Hero Card -->
+<section class="relative overflow-hidden rounded-[24px] p-card-padding gradient-brand text-white shadow-xl min-h-[160px] flex flex-col justify-end">
+<!-- Background Elements -->
+<div class="absolute inset-0 opacity-30 pointer-events-none">
+<div class="absolute top-4 right-8">
+<span class="material-symbols-outlined text-[64px] text-white" style="font-variation-settings: 'FILL' 1;">brightness_2</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
+<svg class="h-full w-full" preserveaspectratio="none" viewbox="0 0 500 150">
+<path d="M0,150 L0,100 C150,50 350,150 500,80 L500,150 Z" fill="white" opacity="0.15"></path>
+</svg>
+</div>
+</div>
+<div class="relative z-10">
+<p class="font-body-lg text-body-lg italic opacity-95 leading-relaxed mb-1">“Amallar niyatga bog'liqdir.”</p>
+<p class="font-label-caps text-label-caps opacity-70">— Imom Buxoriy rivoyati</p>
+</div>
+</section>
+<!-- Progress Section -->
+<section class="space-y-stack-gap-sm">
+<div class="flex justify-between items-end px-1">
+<h2 class="font-headline-md text-headline-md text-on-surface">Bugungi progress</h2>
+<div class="flex flex-col items-end">
+<span class="font-display-numeral text-[24px] text-primary">70%</span>
+<span class="font-label-caps text-label-caps text-outline">7/10 bajarildi</span>
+</div>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full gradient-brand w-[70%] rounded-full gradient-glow"></div>
+</div>
+</section>
+<!-- Prayer Strip -->
+<section class="bg-surface-container rounded-3xl p-stack-gap-md ambient-shadow card-border">
+<div class="flex justify-between items-center mb-stack-gap-md px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Namoz vaqtlari</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary bg-primary/10 px-2 py-0.5 rounded-full">Asr — 1s 24d qoldi</span>
+</div>
+<div class="flex justify-between items-center px-1">
+<!-- Bomdod -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-12 h-12 rounded-full flex items-center justify-center prayer-toggle-active text-on-secondary">
+<span class="material-symbols-outlined font-bold">done</span>
+</button>
+<span class="font-label-caps text-label-caps text-outline">Bomdod</span>
+</div>
+<!-- Peshin -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-12 h-12 rounded-full flex items-center justify-center prayer-toggle-active text-on-secondary">
+<span class="material-symbols-outlined font-bold">done</span>
+</button>
+<span class="font-label-caps text-label-caps text-outline">Peshin</span>
+</div>
+<!-- Asr -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-12 h-12 rounded-full flex items-center justify-center border-2 border-primary text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">circle</span>
+</button>
+<span class="font-label-caps text-label-caps text-primary font-bold">Asr</span>
+</div>
+<!-- Shom -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-12 h-12 rounded-full flex items-center justify-center border-2 border-surface-container-highest text-outline hover:bg-surface-container-highest/50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">circle</span>
+</button>
+<span class="font-label-caps text-label-caps text-outline">Shom</span>
+</div>
+<!-- Xufton -->
+<div class="flex flex-col items-center gap-2">
+<button class="w-12 h-12 rounded-full flex items-center justify-center border-2 border-surface-container-highest text-outline hover:bg-surface-container-highest/50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">circle</span>
+</button>
+<span class="font-label-caps text-label-caps text-outline">Xufton</span>
+</div>
+</div>
+</section>
+<!-- Today's Tasks -->
+<section class="space-y-stack-gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface px-1">Bugungi vazifalar</h2>
+<div class="space-y-stack-gap-sm">
+<!-- Task 1 -->
+<div class="relative flex items-center justify-between p-4 bg-surface-container rounded-2xl ambient-shadow card-border group active:scale-[0.98] transition-transform">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-red-400 rounded-r-full shadow-[0_0_8px_rgba(248,113,113,0.4)]"></div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 rounded-xl bg-red-400/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-400">menu_book</span>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-red-400 rounded-full border-2 border-background"></div>
+</div>
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Qur'on tilovati</h3>
+<p class="font-body-sm text-body-sm text-outline">15-pora, 🔥 12 kun ketma-ket</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full gradient-brand gradient-glow flex items-center justify-center text-on-secondary shadow-sm">
+<span class="material-symbols-outlined text-[18px] font-bold">done</span>
+</button>
+</div>
+<!-- Task 2 -->
+<div class="relative flex items-center justify-between p-4 bg-surface-container rounded-2xl ambient-shadow card-border group active:scale-[0.98] transition-transform">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-amber-400 rounded-r-full shadow-[0_0_8px_rgba(251,191,36,0.4)]"></div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 rounded-xl bg-amber-400/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-400">fitness_center</span>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-amber-400 rounded-full border-2 border-background"></div>
+</div>
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Ertalabki badantarbiya</h3>
+<p class="font-body-sm text-body-sm text-outline">20 daqiqa</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full border-2 border-surface-container-highest flex items-center justify-center text-transparent hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] font-bold">done</span>
+</button>
+</div>
+<!-- Task 3 -->
+<div class="relative flex items-center justify-between p-4 bg-surface-container rounded-2xl ambient-shadow card-border group active:scale-[0.98] transition-transform">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-outline/50 rounded-r-full"></div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">book</span>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-outline rounded-full border-2 border-background"></div>
+</div>
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Kitob mutolaasi</h3>
+<p class="font-body-sm text-body-sm text-outline">20 sahifa</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full border-2 border-surface-container-highest flex items-center justify-center text-transparent hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] font-bold">done</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB -->
+<button class="fixed right-6 bottom-24 gradient-brand gradient-glow text-on-secondary flex items-center gap-2 px-5 py-4 rounded-full shadow-2xl hover:brightness-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined font-bold">add</span>
+<span class="font-body-lg font-bold">Vazifa qo'shish</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-safe-area-inset-bottom glass-nav border-t border-surface-container-highest">
+<a class="flex flex-col items-center justify-center text-primary font-bold py-3 transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-caps text-label-caps mt-1">Bugun</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline py-3 hover:text-primary transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">target</span>
+<span class="font-label-caps text-label-caps mt-1">Maqsadlar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline py-3 hover:text-primary transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps mt-1">Moliya</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline py-3 hover:text-primary transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">balance</span>
+<span class="font-label-caps text-label-caps mt-1">Mizan</span>
+</a>
+</nav>
+<script>
+        // Task completion toggle logic
+        document.querySelectorAll('button.w-7.h-7').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (this.classList.contains('gradient-brand')) {
+                    this.classList.remove('gradient-brand', 'gradient-glow', 'text-on-secondary');
+                    this.classList.add('border-2', 'border-surface-container-highest', 'text-transparent');
+                } else {
+                    this.classList.add('gradient-brand', 'gradient-glow', 'text-on-secondary');
+                    this.classList.remove('border-2', 'border-surface-container-highest', 'text-transparent');
+                }
+            });
+        });
+
+        // Prayer toggle logic
+        document.querySelectorAll('.flex-col.items-center.gap-2 button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('prayer-toggle-active');
+                this.classList.toggle('text-on-secondary');
+                this.classList.toggle('border-2');
+                this.classList.toggle('border-surface-container-highest');
+                this.classList.toggle('text-outline');
+                this.classList.toggle('border-primary');
+                this.classList.toggle('text-primary');
+                
+                const icon = this.querySelector('span');
+                if (this.classList.contains('prayer-toggle-active')) {
+                    icon.innerText = 'done';
+                } else {
+                    icon.innerText = 'circle';
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "Mizan",
+    "slug": "mizan",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "mizan",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "pro.navai.mizan",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Namoz vaqtlarini aniq hisoblash uchun joylashuvingiz kerak."
+      }
+    },
+    "android": {
+      "package": "pro.navai.mizan",
+      "adaptiveIcon": {
+        "backgroundColor": "#0FA36B",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-secure-store",
+      "expo-sqlite",
+      "expo-splash-screen",
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Namoz vaqtlarini aniq hisoblash uchun joylashuvingiz kerak."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#0FA36B"
+        }
+      ],
+      "./plugins/withMizanWidgets"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

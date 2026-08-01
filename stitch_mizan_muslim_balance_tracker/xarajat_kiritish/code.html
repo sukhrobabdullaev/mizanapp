@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Mizan - Xarajat Kiritish</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9f8",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f3f4f3",
+                    "on-primary-fixed": "#002112",
+                    "on-secondary-container": "#00714d",
+                    "primary": "#006a43",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#f5fff8",
+                    "surface-dim": "#d9dad9",
+                    "surface-bright": "#f9f9f8",
+                    "primary-container": "#008656",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f9f9f8",
+                    "outline-variant": "#bccabf",
+                    "on-surface-variant": "#3d4a41",
+                    "inverse-on-surface": "#f0f1f0",
+                    "tertiary": "#4b6157",
+                    "surface-tint": "#006c45",
+                    "on-background": "#191c1c",
+                    "primary-fixed-dim": "#60dd9f",
+                    "primary-fixed": "#7efaba",
+                    "on-primary-fixed-variant": "#005233",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#6d7a71",
+                    "secondary-fixed-dim": "#45dfa2",
+                    "secondary-fixed": "#68fcbc",
+                    "secondary": "#006c49",
+                    "on-surface": "#191c1c",
+                    "surface-container-high": "#e7e8e7",
+                    "tertiary-fixed": "#d0e8dc",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-lg": "32px",
+                    "card-padding": "24px",
+                    "container-margin": "20px",
+                    "stack-gap-md": "16px",
+                    "gutter": "12px",
+                    "stack-gap-sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "display-numeral": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-numeral": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .emerald-gradient {
+            background: linear-gradient(135deg, #0FA36B 0%, #4EE6A8 100%);
+        }
+        .glass-sheet {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+        }
+        .bento-card {
+            box-shadow: 0 10px 30px rgba(15, 163, 107, 0.08);
+        }
+        .drag-handle {
+            width: 40px;
+            height: 4px;
+            background: #bccabf;
+            border-radius: 2px;
+        }
+        .category-selected {
+            border: 2px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #0FA36B, #4EE6A8);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+        .sadaqa-ring {
+            box-shadow: 0 0 0 3px #C9A24B;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        .animate-slide-up {
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-lg text-on-surface">
+<!-- Background Screen: Moliya (Dimmed) -->
+<div class="fixed inset-0 z-0 bg-surface flex flex-col brightness-50 grayscale-[0.2]">
+<!-- TopAppBar Placeholder -->
+<header class="w-full top-0 sticky flex justify-between items-center px-container-margin py-stack-gap-md bg-surface">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary">Moliya</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a modern user in a minimalist office setting, soft natural lighting, high-end DSLR photography, clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6M8JLznGBM_GuugS5l9LNtEyzKF4pjcvFvedkeneJrBPAxYOmxnL1VX27v7mL8_zmVl86OtcCzMWDwcA3a4Q4h9WNGEYtlXhwQ4T8IHK1wSAhp4ExCKjBsXiVJjHHsCrZjCgqhfG2YSFMvMZkwmwoQ8pgM_oskh0shv5UdDwO-JUn2t6aCLc-Mc5hD9GfIUocmRqMqHLVzq-L4n6h4TlhY2W0OGFQnINDYRSxh2yyWdsISIcWZM3JuBMwUW7NZGiUueDTP__DuiS_"/>
+</div>
+</header>
+<main class="flex-1 px-container-margin pt-stack-gap-lg">
+<div class="w-full p-card-padding rounded-xl bg-surface-container-lowest bento-card mb-stack-gap-lg">
+<p class="font-label-caps text-label-caps text-outline uppercase">Umumiy balans</p>
+<h2 class="font-display-numeral text-display-numeral text-primary mt-2">12 450 000 <span class="text-headline-md font-bold">so'm</span></h2>
+</div>
+<div class="grid grid-cols-2 gap-gutter mb-stack-gap-lg">
+<div class="p-card-padding rounded-xl bg-secondary-container/20 bento-card">
+<span class="material-symbols-outlined text-secondary">arrow_downward</span>
+<p class="font-label-caps text-label-caps text-outline mt-2">Kirim</p>
+<p class="font-headline-md text-headline-md text-secondary">3.2M</p>
+</div>
+<div class="p-card-padding rounded-xl bg-error-container/20 bento-card">
+<span class="material-symbols-outlined text-error">arrow_upward</span>
+<p class="font-label-caps text-label-caps text-outline mt-2">Chiqim</p>
+<p class="font-headline-md text-headline-md text-error">1.8M</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Dimmed) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-6 bg-surface/80 backdrop-blur-md rounded-t-xl shadow-[0_-10px_30px_rgba(15,163,107,0.08)]">
+<div class="flex flex-col items-center justify-center text-outline">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-caps text-label-caps mt-1">Bugun</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline">
+<span class="material-symbols-outlined">target</span>
+<span class="font-label-caps text-label-caps mt-1">Maqsadlar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps mt-1">Moliya</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline">
+<span class="material-symbols-outlined">balance</span>
+<span class="font-label-caps text-label-caps mt-1">Mizan</span>
+</div>
+</nav>
+</div>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm"></div>
+<!-- Add Expense Bottom Sheet -->
+<div class="fixed inset-x-0 bottom-0 z-[70] glass-sheet rounded-t-[32px] animate-slide-up flex flex-col max-h-[813px]">
+<!-- Handle -->
+<div class="flex justify-center py-4">
+<div class="drag-handle"></div>
+</div>
+<!-- Header: Segmented Toggle -->
+<div class="px-container-margin mb-stack-gap-md">
+<div class="flex p-1 bg-surface-container rounded-full">
+<button class="flex-1 py-2.5 rounded-full text-white emerald-gradient font-bold shadow-lg transition-transform active:scale-95">Chiqim</button>
+<button class="flex-1 py-2.5 rounded-full text-outline font-semibold hover:bg-surface-container-high transition-colors">Kirim</button>
+</div>
+</div>
+<!-- Amount Display -->
+<div class="px-container-margin flex flex-col items-center mb-stack-gap-md">
+<div class="flex items-baseline gap-2">
+<span class="font-display-numeral text-display-numeral text-on-surface">150 000</span>
+<span class="font-headline-md text-headline-md text-outline">so'm</span>
+</div>
+<button class="mt-1 flex items-center gap-1 px-3 py-1 bg-surface-container-low rounded-full text-label-caps text-outline border border-outline-variant">
+                UZS <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Category Grid -->
+<div class="px-container-margin grid grid-cols-4 gap-y-stack-gap-md gap-x-4 mb-stack-gap-lg overflow-y-auto">
+<!-- Oziq-ovqat -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#E8F5E9] flex items-center justify-center category-selected">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+</div>
+<span class="text-[11px] font-semibold text-outline text-center">Oziq-ovqat</span>
+</div>
+<!-- Transport -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#E3F2FD] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#1E88E5]">directions_car</span>
+</div>
+<span class="text-[11px] font-semibold text-outline text-center">Transport</span>
+</div>
+<!-- Sadaqa -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#FFF8E1] flex items-center justify-center sadaqa-ring">
+<span class="material-symbols-outlined text-[#C9A24B]">volunteer_activism</span>
+</div>
+<span class="text-[11px] font-semibold text-outline text-center">Sadaqa</span>
+</div>
+<!-- Uy -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#F3E5F5] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#8E24AA]">home</span>
+</div>
+<span class="text-[11px] font-semibold text-outline text-center">Uy</span>
+</div>
+<!-- Aloqa -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#E0F7FA] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#00ACC1]">wifi</span>
+</div>
+<span class="text-[11px] font-semibold text-outline text-center">Aloqa</span>
+</div>
+<!-- Kiyim -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#FCE4EC] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#D81B60]">checkroom</span>
+</div>
+<span class="text-[11px] font-semibold text-outline text-center">Kiyim</span>
+</div>
+<!-- Sog'liq -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#EFEBE9] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#6D4C41]">medical_services</span>
+</div>
+<span class="text-[11px] font-semibold text-outline text-center">Sog'liq</span>
+</div>
+<!-- Boshqa -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">more_horiz</span>
+</div>
+<span class="text-[11px] font-semibold text-outline text-center">Boshqa</span>
+</div>
+</div>
+<!-- Input Field -->
+<div class="px-container-margin mb-6">
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl py-4 px-5 text-on-surface-variant focus:ring-2 focus:ring-primary/20 placeholder:text-outline/50 font-body-lg" placeholder="Izoh..." type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline/40">edit_note</span>
+</div>
+</div>
+<!-- Custom Keypad -->
+<div class="mt-auto bg-surface-container-lowest/50 p-4 border-t border-outline-variant/10">
+<div class="grid grid-cols-4 gap-3">
+<!-- Numbers and Backspace -->
+<div class="col-span-3 grid grid-cols-3 gap-3">
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">1</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">2</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">3</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">4</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">5</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">6</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">7</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">8</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">9</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">.</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">0</button>
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-white text-headline-md text-on-surface shadow-sm active:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-outline">backspace</span>
+</button>
+</div>
+<!-- Save Button Column -->
+<div class="col-span-1">
+<button class="w-full h-full emerald-gradient rounded-2xl flex flex-col items-center justify-center text-white shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[32px] mb-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-bold text-label-caps">Saqlash</span>
+</button>
+</div>
+</div>
+<!-- Bottom spacing for iOS safe area -->
+<div class="h-6"></div>
+</div>
+</div>
+<script>
+        // Micro-interactions for keypad
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('touchend', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple selection toggle for categories
+        const categoryTiles = document.querySelectorAll('.category-selected, div[class*="rounded-full"]');
+        categoryTiles.forEach(tile => {
+            if(tile.parentElement.classList.contains('flex-col')) {
+                tile.addEventListener('click', () => {
+                    categoryTiles.forEach(t => t.classList.remove('category-selected'));
+                    tile.classList.add('category-selected');
+                });
+            }
+        });
+    </script>
+</body></html>
